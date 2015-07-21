@@ -50,6 +50,26 @@ var education2 = {
     ]
 };
 
+var work ={
+    "start" : "",
+    "employer" : "",
+    "title": "",
+    "dates" : "",
+    "location" : "",
+    "description" : ""
+};
+
+var project = {
+    "start" : "",
+    "title" : "",
+    "dates" : "",
+    "description" : "",
+    "image" : ""
+};
+
+
+
+
 var HTMLheaderName    = HTMLheaderName.replace('%data%' , bio.name);
 var HTMLheaderRole      = HTMLheaderRole.replace('%data%' , bio.role);
 
