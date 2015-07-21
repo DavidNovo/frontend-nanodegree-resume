@@ -11,7 +11,7 @@ var bio = {
     "contactInfo": "whatefver",
     "pictureURL" : "later",
     "welcomeMessage" : "Hi how are you",
-    "slills" : "Java"
+    "skills" :  ["Java", "Web Development", "J2EE"]
 };
 
 // this is dot notation
@@ -54,26 +54,41 @@ var education = {
 };
 
 var work ={
-    "jobs" : [
-    "start" : "2015 June",
-    "employer" : "Peer 1 Hosting",
-    "title": "Software Engineer",
-    "dates" : "current",
-    "location" : "San Antonio",
-    "description" : "It is a lot of fun"
+    "jobs" :  [
+        {
+            "start" : "2015 June",
+            "employer" : "Peer 1 Hosting",
+            "title": "Software Engineer",
+            "dates" : "current",
+            "location" : "San Antonio",
+            "description" : "It is a lot of fun"
+        }
     ]
 };
 
 var projects = {
     "projects" : [
-    "start" : "2015, June",
-    "title" : "Make a temperature sensor using Explora",
-    "dates" : "on-going",
-    "description" : "I want to make a weather station using an Explora board.  I am using one of them because I do not know hoiw to wire the electronics parts I will need.",
-    "image" : ""
+        {
+            "start" : "2015, June",
+            "title" : "Make a temperature sensor using Explora",
+            "dates" : "on-going",
+            "description" : "I want to make a weather station using an Explora board.  I am using one of them because I do not know hoiw to wire the electronics parts I will need.",
+            "image" : ""
+        }
     ]
 };
 
+// checking if there are skils
+if (bio.skills.length  >  0) {
+    $("#header").append(HTMLskillsStart);
 
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0] );
+    $("#skills").append(formattedSkill);
 
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[1] );
+    $("#skills").append(formattedSkill);
+
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[2] );
+    $("#skills").append(formattedSkill);
+}
 
