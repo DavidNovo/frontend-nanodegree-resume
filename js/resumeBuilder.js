@@ -59,9 +59,17 @@ var work ={
             "start" : "2015 June",
             "employer" : "Peer 1 Hosting",
             "title": "Software Engineer",
-            "dates" : "current",
+            "dates" : "2015, June to current",
             "location" : "San Antonio",
-            "description" : "It is a lot of fun"
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat in nobis nesciunt eveniet natus. Cumque commodi eos, optio officia recusandae nobis vitae, tempora aut, tenetur perferendis unde molestias iure dolore."
+        },
+                {
+            "start" : "2014 Sept",
+            "employer" : "Def-Logix",
+            "title": "Software Engineer",
+            "dates" : "2014, Sept to 2015 May",
+            "location" : "San Antonio",
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum maiores voluptas illo dolore. Voluptatem possimus dolores maiores praesentium velit quibusdam, eum fugiat esse sunt, inventore assumenda? At officiis, aspernatur eos."
         }
     ]
 };
@@ -91,4 +99,33 @@ if (bio.skills.length  >  0) {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[2] );
     $("#skills").append(formattedSkill);
 }
+
+// first define functions...
+var displayWork = function() {
+    for (var job in work.jobs) {
+    // I have to append the  div containning the class  attribute to the HTML page
+    // // create new div for work experience
+    $("#workExperience").append(HTMLworkStart);
+    // now the work-entry class is on the page.
+
+    var formattedWorkEmployer= HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedWorkTitle= HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle );
+
+    // get the dates
+     var formattedWorkDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedWorkDate);
+
+    // get the descriptions
+    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedWorkDescription);
+    }
+}
+
+// ... then call functions
+// apend my jobs
+displayWork();
+
+
+
 
